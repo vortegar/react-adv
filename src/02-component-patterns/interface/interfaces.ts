@@ -2,6 +2,7 @@ import { Props as ProductCardProps    } from "../components/ProductCard";
 import { Props as ProductTitleProps   } from "../components/ProductTitle";
 import { Props as ProductImageProps   } from '../components/ProductImage';
 import { Props as ProductButtonsProps } from '../components/ProductButton';
+import { products } from '../data/product';
 
 
 
@@ -13,8 +14,10 @@ export interface Product {
 
 export interface ProductContextProps {
     counter  : number;
-    incresBy : ( value:number) => void;
     product  : Product;
+    maxCount ?: number;
+    
+    incresBy : ( value:number) => void;
 }
 
 
@@ -32,5 +35,19 @@ export interface onChangeArgs {
 
 export interface ProductInCart extends Product {
     count : number
-  }
-  
+}
+
+export interface InitialValues {
+    count   ?: number;
+    maxCount?: number;
+}
+
+export interface ProductCardHandlers {
+    count            : number;
+    isMaxCountReached: boolean;
+    maxCount        ?: number;
+    product          : Product;
+
+    incresBy       : ( value:number) => void;
+    reset            : () => void;
+}
