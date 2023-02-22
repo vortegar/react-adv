@@ -5,7 +5,6 @@ const product1 = {
     title:'Coffe Mug - Card',
     img   : './coffee-mug.png'
 }
-
     const product2 = {
     id: '2',
     title:'Coffe Mug - Meme',
